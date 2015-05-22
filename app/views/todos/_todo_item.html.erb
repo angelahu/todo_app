@@ -1,0 +1,24 @@
+<div class="row todo-item">
+
+	<% if todo.completed? %>
+	<div class="col-md-8 completed">
+		<%=todo.content%>
+	</div>
+	<% else %>
+	<div class="col-md-8">
+		<%=todo.content%>
+	</div>
+	<% end %>
+
+	<div class="col-md-4">
+		<% if todo.active? %>
+		<%= link_to "Completed", complete_todo_path(todo),class:"btn btn-primary",method:"post" %>
+		<% else %>
+		<%= link_to "Todo", active_todo_path(todo),class:"btn btn-primary",method:"post" %>
+		<% end %>
+		<span class="todo-actions">
+			<%= link_to "Edit", edit_todo_path(todo),class:"btn btn-success" %>
+			<%= link_to "Delete", todo_path(todo),class:"btn btn-danger",method:"delete",data: { confirm: "Are U Sure 2 Delete?" } %>
+		</span>
+	</div>
+</div>

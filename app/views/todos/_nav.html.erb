@@ -1,0 +1,24 @@
+<ul class="nav nav-pills">
+
+	<% if @active_todo_nav=="all" %>
+	<li role="presentation" class="active"><a href="#">Show All</a></li>
+	<% else %>
+	<li role ="presentation"><%= link_to "Show All", todos_path(filter:"all") %>
+	</li>
+	<% end %>
+
+	<% if @active_todo_nav=="active" %>
+	<li role="presentation" class="active"><a href="#">Todo</a></li>
+	<% else %>
+	<li role ="presentation"><%= link_to "Todo", todos_path(filter:"active") %>
+	</li>
+	<% end %>
+
+	<% if @active_todo_nav=="completed" %>
+	<li role="presentation" class="active"><a href="#">Completed</a></li>
+	<% else %>
+	<li role ="presentation"><%= link_to "Completed", todos_path(filter:"completed") %>
+	</li>
+	<% end %>
+
+</ul>

@@ -1,0 +1,13 @@
+<h2>Things U Need 2 Do</h2>
+<%=render :partial =>"form" %>
+<div id="todoErrors">
+
+</div>
+<%=render :partial =>"nav" %>
+
+<div id="todoList">
+	<%@todos.each do|todo|%>
+	<%=render :partial =>"todo_item", :locals => {todo:todo} %>
+	<%end%>
+
+</div>
