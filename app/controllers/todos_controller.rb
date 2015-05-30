@@ -13,7 +13,7 @@ class TodosController < ApplicationController
 
 	def create
 		@todo=Todo.new
-		@todo.content=params[:content]
+		@todo.content=params[:todo][:content]
 		if @todo.save
 			render layout:false
 		else
